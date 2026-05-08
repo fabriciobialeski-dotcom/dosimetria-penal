@@ -11,7 +11,7 @@ if "id" in query_params:
     calc_id = query_params["id"]
 
     response = requests.get(
-        f"http://127.0.0.1:8000/calculos/{calc_id}"
+        f"https://dosimetria-penal.onrender.com/calculos/{calc_id}"
     )
 
     if response.status_code == 200:
@@ -20,6 +20,7 @@ if "id" in query_params:
         if "dados" in data:
             st.session_state.calculo_penal = data["dados"]
             st.success("✅ Cálculo carregado do link")
+
 
 from calculo import (
     calcular_pena_base,
