@@ -346,14 +346,14 @@ if st.button("Gerar arquivo do cálculo"):
 if st.button("💾 Gerar link compartilhável"):
 
     response = requests.post(
-        "http://127.0.0.1:8000/calculos",
+        "https://dosimetria-penal.onrender.com/calculos",
         json={"dados": st.session_state.calculo_penal}
     )
 
     if response.status_code == 200:
         calc_id = response.json()["id"]
 
-        link = f"http://localhost:8501/?id={calc_id}"
+        link = f"https://SEU-APP.streamlit.app/?id={calc_id}"
 
         st.success("✅ Link gerado:")
         st.code(link)
