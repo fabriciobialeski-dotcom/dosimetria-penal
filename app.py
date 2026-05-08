@@ -353,7 +353,7 @@ if st.button("💾 Gerar link compartilhável"):
     if response.status_code == 200:
         calc_id = response.json()["id"]
 
-        link = f"https://SEU-APP.streamlit.app/?id={calc_id}"
+        link = f"https://dosimetria-penal.streamlit.app/?id={calc_id}"
 
         st.success("✅ Link gerado:")
         st.code(link)
